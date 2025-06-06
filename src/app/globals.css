@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-geist-sans), sans-serif;
+  color: #1b4730; /* theme.secondary */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.25;
+}
+
+@layer components {
+  .text-title-xl {
+    @apply text-2xl font-bold text-[#1c2619];
+  }
+
+  .text-subtitle {
+    @apply text-lg font-semibold text-[#6a5135];
+  }
+
+  .text-body {
+    @apply text-base text-[#4d4d4d] leading-relaxed;
+  }
+
+  .section-box {
+    @apply rounded-2xl shadow-md mt-[clamp(3rem,6vh,6rem)] py-[clamp(3rem,5vh,4rem)] px-[5vw] mx-[2vw];
+  }
+
+  .card-text-box {
+    @apply rounded-xl px-4 py-4 shadow-sm;
+  }
+
+  .form-control {
+    @apply w-full border border-gray-300 rounded-lg p-3 text-[16px] leading-tight;
+  }
+
+  .form-button {
+    @apply w-full bg-[#2E3A25] hover:bg-[#1f2b1b] text-white font-semibold py-3 rounded-lg transition-colors;
+  }
+}
+
+/* iPad Mini (Portrait 768x1024) specific */
+@media (width: 768px) and (height: 1024px) {
+  html {
+    font-size: 18px;
+  }
+
+  .text-body {
+    font-size: 0.9rem;
+  }
+
+  .text-body p {
+    font-size: 0.9rem !important;
+    line-height: 1.6 !important;
+  }
+
+  .text-subtitle {
+    font-size: 1.125rem;
+  }
+
+  .text-title-xl {
+    font-size: 1.5rem;
+  }
+
+  .form-control {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .form-button {
+    font-size: 1.125rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) and (min-height: 900px),
+       (min-width: 880px) and (max-width: 930px) and (min-height: 1000px) {
+  html {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 1.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  li {
+    font-size: 1.2rem;
+  }
+
+  a {
+    font-size: 1.125rem;
+  }
+
+  small {
+    font-size: 1rem;
+  }
+}
+
+@layer utilities {
+  .about-section-columns {
+    @apply flex;
+  }
+}
+
+/* iPad Pro (Portrait) specific layout and text adjustments */
+@media (width: 1024px) and (min-height: 1300px) {
+  .about-section-columns {
+    flex-direction: column !important;
+    gap: 2rem !important;
+  }
+
+  .footer-desktop {
+    font-size: 1.125rem !important;
+  }
+
+  .footer-contact {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 2rem !important;
+    font-size: 1.2rem !important;
+  }
+
+  .footer-contact-row-1,
+  .footer-contact-row-2 {
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+    justify-content: center !important;
+  }
+
+  .text-body {
+    font-size: 1.5rem !important;
+    line-height: 1.8 !important;
+  }
+
+  .text-subtitle {
+    font-size: 1.4rem !important;
+  }
+
+  .text-title-xl {
+    font-size: 1.75rem !important;
+  }
+
+  .products-philosophy-box {
+    margin-top: 4rem !important;
+  }
+
+  .product-cta-columns {
+    gap: 6rem !important;
+  }
+
+  .product-cta-columns > div {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .product-wheel {
+    width: 420px !important;
+    height: 420px !important;
+  }
+}
