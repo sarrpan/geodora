@@ -6,26 +6,18 @@ export async function POST(req: NextRequest) {
     const data = await req.json();
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST,
-      port: 465,
-      secure: true,
+      service: 'Gmail',
       auth: {
-        user: process.env.SMTP_USER,
-        pass: process.env.SMTP_PASS,
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
       },
     });
 
     const mailOptions = {
-      from: process.env.SMTP_USER,
-      to: process.env.SMTP_TO || process.env.SMTP_USER,
+      from: process.env.MAIL_USER,
+      to: process.env.MAIL_TO || process.env.MAIL_USER,
       subject: '📬 Νέο μήνυμα από τη φόρμα επικοινωνίας',
-      text: `
-Όνομα: ${data.name}
-Email: ${data.email}
-
-Μήνυμα:
-${data.message}
-      `,
+      text: `Όνομα: ${data.name}\nEmail: ${data.email}\n\nΜήνυμα:\n${data.message}`,
     };
 
     await transporter.sendMail(mailOptions);
