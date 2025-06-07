@@ -69,10 +69,16 @@ export default function Footer() {
           </div>
 
           <div className="flex justify-center items-center">
-            <div className="flex gap-4 text-body">
-              <a href="#" className="hover:underline">FB</a>
-              <a href="#" className="hover:underline">IG</a>
-              <a href="#" className="hover:underline">YT</a>
+            <div className="flex gap-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <Image src="/images/facebook.svg" alt="Facebook" width={38} height={38} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <Image src="/images/twitter.svg" alt="Twitter" width={38} height={38} />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                <Image src="/images/youtube.svg" alt="YouTube" width={38} height={38} />
+              </a>
             </div>
           </div>
         </div>
@@ -150,11 +156,17 @@ export default function Footer() {
 
           {/* Social icons */}
           <hr className="my-4" />
-          <div className="flex justify-center gap-4 mb-6 text-body">
-            <a href="#" className="hover:underline">FB</a>
-            <a href="#" className="hover:underline">IG</a>
-            <a href="#" className="hover:underline">YT</a>
-          </div>
+            <div className="flex gap-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
+                <Image src="/images/facebook.svg" alt="Facebook" width={24} height={24} />
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                <Image src="/images/twitter.svg" alt="Twitter" width={24} height={24} />
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
+                <Image src="/images/youtube.svg" alt="YouTube" width={24} height={24} />
+              </a>
+            </div>
         </div>
 
         {/* Copyright */}

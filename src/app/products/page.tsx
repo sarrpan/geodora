@@ -28,23 +28,23 @@ export default function Page() {
       {/* Κάρτες Προϊόντων */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-4">
         <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center">
-          <img src="/OliveOil.png" alt="Ελαιόλαδο" className="w-24 h-32 mx-auto mb-2" />
+          <img src="/images/OliveOil.png" alt="Ελαιόλαδο" className="w-24 h-32 mx-auto mb-2" />
           <p className="font-semibold">Ελαιόλαδο</p>
         </div>
         <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center">
-          <img src="/Olives.png" alt="Ελιές" className="w-24 h-32 mx-auto mb-2" />
+          <img src="/images/Olives.png" alt="Ελιές" className="w-24 h-32 mx-auto mb-2" />
           <p className="font-semibold">Ελιές</p>
         </div>
         <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center">
-          <img src="/Oregano.png" alt="Βότανα" className="w-24 h-32 mx-auto mb-2" />
+          <img src="/images/Oregano.png" alt="Βότανα" className="w-24 h-32 mx-auto mb-2" />
           <p className="font-semibold">Βότανα</p>
         </div>
         <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center">
-          <img src="/Beans.png" alt="Όσπρια" className="w-24 h-32 mx-auto mb-2" />
+          <img src="/images/Beans.png" alt="Όσπρια" className="w-24 h-32 mx-auto mb-2" />
           <p className="font-semibold">Φασόλια</p>
         </div>
         <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center">
-          <img src="/Jam.png" alt="Μαρμελάδες" className="w-24 h-32 mx-auto mb-2" />
+          <img src="/images/Jam.png" alt="Μαρμελάδες" className="w-24 h-32 mx-auto mb-2" />
           <p className="font-semibold">Μαρμελάδες & Γλυκά</p>
         </div>
         <div className="bg-gray-100 p-4 rounded text-center border border-dashed border-gray-400">

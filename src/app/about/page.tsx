@@ -17,7 +17,7 @@ export default function AboutPage() {
         {/* Image */}
         <div className="md:w-1/2">
           <img
-            src="/Handshake.png"
+            src="/images/Handshake.png"
             alt="Συνεργασία με παραγωγό"
             className="w-full h-auto rounded-lg shadow-md"
           />
