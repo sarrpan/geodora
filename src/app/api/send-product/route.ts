@@ -8,27 +8,19 @@ export async function POST(req: NextRequest) {
     const data = await req.json();
 
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST, // π.χ. mail.geodora.gr
-      port: 465,
-      secure: true,
+      service: 'Gmail',
       auth: {
-        user: process.env.SMTP_USER, // π.χ. info@geodora.gr
-        pass: process.env.SMTP_PASS,
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS,
       },
     });
 
     const mailOptions = {
-      from: process.env.SMTP_USER,
-      to: process.env.SMTP_TO || process.env.SMTP_USER,
-      subject: '📦 Νέα πρόταση προϊόντος από τη φόρμα',
-      text: `
-Ονοματεπώνυμο: ${data.name}
-Email: ${data.email}
-Τύπος προϊόντος: ${data.productType}
-Προέλευση / Περιοχή: ${data.origin}
-Συσκευασία / Διαθεσιμότητα: ${data.packaging}
-Σχόλια: ${data.comments || '(κανένα)'}
-      `.trim(),
+      from: process.env.MAIL_USER,
+      to: process.env.MAIL_TO || process.env.MAIL_USER,
+      subject: '📬 Νέο μήνυμα από τη φόρμα επικοινωνίας',
+      text: `Όνομα: ${data.name}\nEmail: ${data.email}\n\nΜήνυμα:\n${data.message}`,
+
     };
 
     await transporter.sendMail(mailOptions);
