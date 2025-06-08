@@ -11,7 +11,7 @@ export default function HeroSection() {
         alt="Ελαιώνας ανατολή"
         fill
         priority
-        className="object-cover object-top"
+        className="object-cover object-top "
       />
 
       {/* Gradient Overlay */}
@@ -25,8 +25,9 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 pt-[12vh] sm:pt-[12vh] sm:px-6 lg:px-8">
-        <h1 className="text-[22px] sm:text-[36px] lg:text-[42px] font-extrabold text-[#F3F1EC] tracking-tight leading-tight mb-4 max-w-3xl drop-shadow-xl">
-          Η Γη προσφέρει — εμείς μεταφέρουμε αξία
+        <h1 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold leading-tight text-white drop-shadow-lg mb-4">
+          <span className="block">Η Γη προσφέρει</span>
+          <span className="block mt-2">εμείς μεταφέρουμε αξία</span>
         </h1>
         <p className="text-[16px] sm:text-[18px] lg:text-[20px] text-[#E1E8D9] opacity-95 drop-shadow-sm mb-8 max-w-2xl">
           Από το χωράφι στο ράφι. Με σεβασμό στον άνθρωπο και στο προϊόν.

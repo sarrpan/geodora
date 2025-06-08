@@ -29,7 +29,7 @@ export default function Footer() {
         {/* Desktop layout for >1024px */}
         <div className="hidden lg:flex footer-desktop flex-col items-center text-sm mb-8 gap-y-6">
           <div className="flex items-center gap-1 justify-center">
-            <Image src="/logo.svg" alt="Logo" width={40} height={40} className="self-center -mt-1" />
+            <Image src="/images/geodora-logo.svg" alt="Logo" width={40} height={40} className="self-center -mt-1" />
             <div className="flex items-center gap-2 mt-4">
               <span className="text-title-xl text-[rgba(75,46,30,1)]">eodora –</span>
               <span className="text-subtitle italic">
@@ -87,7 +87,7 @@ export default function Footer() {
         <div className="lg:hidden ">
           {/* Logo and tagline */}
           <div className="flex items-center gap-4 mb-6">
-            <Image src="/logo.svg" alt="Logo" width={60} height={60} />
+            <Image src="/images/geodora-logo.svg" alt="Logo" width={60} height={60} />
             <div>
               <h3 className="text-subtitle text-[#4b2e1e]">Geodora</h3>
               <p className="text-body italic leading-snug">

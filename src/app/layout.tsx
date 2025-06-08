@@ -6,7 +6,7 @@ import "./globals.css";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import HeroSection from "../components/HeroSection";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,9 +37,6 @@ export default function RootLayout({
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bg`}>
         {/* Navbar */}
         <Navbar />
-
-        {/* HeroSection full-bleed */}
-        <HeroSection />
 
         {/* Main content with pale-green background inherited via body */}
         <main>
