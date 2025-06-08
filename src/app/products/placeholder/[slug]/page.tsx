@@ -9,9 +9,10 @@ export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}) {
+}): Promise<{ title: string; description: string }> {
   return siteMeta.placeholder;
 }
+
 const placeholderImages = [
   { image: '/images/geo_olive-oil.png' },
   { image: '/images/geo_olives.png' },
