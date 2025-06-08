@@ -2,6 +2,16 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+
+import { siteMeta } from "../../../../lib/siteMeta";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  return siteMeta.placeholder;
+}
 const placeholderImages = [
   { image: '/images/geo_olive-oil.png' },
   { image: '/images/geo_olives.png' },
