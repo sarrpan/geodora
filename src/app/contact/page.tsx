@@ -93,7 +93,7 @@ export default function EpikoinoniaPage() {
           />
         </div>
 
-        <button type="submit" className="bg-[rgba(27,71,48,1)] text-white px-6 py-2 rounded hover:bg-opacity-90">
+        <button type="submit" className="bg-red-600 text-white px-6 py-2 rounded hover:bg-opacity-90">
           Αποστολή
         </button>
 
