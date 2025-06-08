@@ -30,7 +30,7 @@ export default function Navbar() {
   return (
     <nav
       className={`sticky top-0 z-50 bg-[#f9f9f3] transition-all duration-300 ${
-        scrolled ? 'py-2 sm:py-3 shadow-md' : 'py-4 sm:py-6'
+        scrolled ? 'py-2 sm:py-3 shadow-md' : 'py-4 sm:py-6 shadow-md'
       }`}
     >
       <div className="max-w-screen-xl mx-auto px-6 sm:px-6 md:px-8 lg:px-20 xl:px-32 2xl:px-32 [@media(min-width:1920px)]:px-[96px]">
