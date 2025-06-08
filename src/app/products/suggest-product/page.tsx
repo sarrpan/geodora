@@ -1,6 +1,6 @@
 import { siteMeta } from "../../../lib/siteMeta";
 
-export const metadata = siteMeta.placeholder;
+export const metadata = siteMeta.suggestProduct;
 
 import SuggestProductForm from '../../../components/SuggestProductForm';
 
