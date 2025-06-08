@@ -1,8 +1,6 @@
-export const metadata = {
-  title: "Επικοινωνία | Geodora",
-  description:
-    "Επικοινωνήστε με τη Geodora για ερωτήσεις, προτάσεις προϊόντων ή ενδιαφέρον συνεργασίας. Συμπληρώστε τη φόρμα ή στείλτε email.",
-};
+import { siteMeta } from "../../lib/siteMeta";
+
+export const metadata = siteMeta.contact;
 
 import ContactForm from '../../components/ContactForm';
 

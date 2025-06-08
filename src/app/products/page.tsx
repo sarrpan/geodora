@@ -1,17 +1,16 @@
 import Link from "next/link";
 
-export const metadata = {
-  title: "Τα προϊόντα μας | Geodora",
-  description:
-    "Εξερευνήστε τη γκάμα προϊόντων της Geodora: ελαιόλαδο, ελιές, βότανα, όσπρια, παραδοσιακά τρόφιμα και προτάσεις με ελληνική ταυτότητα.",
-};
+import { siteMeta } from "../../lib/siteMeta";
+
+export const metadata = siteMeta.products;
+
 
 
 export default function Page() {
   return (
     <section className="p-6 md:p-10 max-w-5xl mx-auto text-[17px] leading-relaxed space-y-8">
       {/* Τίτλος */}
-      <h1 className="text-2xl font-bold text-center mt-4">Τα προϊόντα μας</h1>
+      <h1 className="text-3xl font-extrabold text-center text-[#b44d00] tracking-wide mt-4">Τα προϊόντα μας</h1>
 
       {/* Εισαγωγικό κείμενο */}
       <div className="space-y-5 w-full mx-auto">
@@ -34,26 +33,36 @@ export default function Page() {
 
       {/* Κάρτες Προϊόντων */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-4">
-        <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center">
-          <img src="/images/OliveOil.png" alt="Ελαιόλαδο" className="w-24 h-32 mx-auto mb-2" />
-          <p className="font-semibold">Ελαιόλαδο</p>
-        </div>
-        <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center">
-          <img src="/images/Olives.png" alt="Ελιές" className="w-24 h-32 mx-auto mb-2" />
-          <p className="font-semibold">Ελιές</p>
-        </div>
-        <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center">
-          <img src="/images/Oregano.png" alt="Βότανα" className="w-24 h-32 mx-auto mb-2" />
-          <p className="font-semibold">Βότανα</p>
-        </div>
-        <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center">
-          <img src="/images/Beans.png" alt="Όσπρια" className="w-24 h-32 mx-auto mb-2" />
-          <p className="font-semibold">Φασόλια</p>
-        </div>
-        <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center">
-          <img src="/images/Jam.png" alt="Μαρμελάδες" className="w-24 h-32 mx-auto mb-2" />
-          <p className="font-semibold">Μαρμελάδες & Γλυκά</p>
-        </div>
+        <Link href="/products/placeholder/oil">
+          <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center hover:scale-105 transition-transform duration-300">
+            <img src="/images/OliveOil.png" alt="Ελαιόλαδο" className="w-24 h-32 mx-auto mb-2 rounded-xl shadow-md" />
+            <p className="font-semibold">Ελαιόλαδο</p>
+          </div>
+        </Link>
+        <Link href="/products/placeholder/olives">
+          <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center hover:scale-105 transition-transform duration-300">
+            <img src="/images/Olives.png" alt="Ελιές" className="w-24 h-32 mx-auto mb-2 rounded-xl shadow-md" />
+            <p className="font-semibold">Ελιές</p>
+          </div>
+        </Link>
+        <Link href="/products/placeholder/herbs">
+          <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center hover:scale-105 transition-transform duration-300">
+            <img src="/images/Oregano.png" alt="Βότανα" className="w-24 h-32 mx-auto mb-2 rounded-md shadow-md" />
+            <p className="font-semibold">Βότανα</p>
+          </div>
+        </Link>
+        <Link href="/products/placeholder/beans">
+          <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center hover:scale-105 transition-transform duration-300">
+            <img src="/images/Beans.png" alt="Φασόλια" className="w-24 h-32 mx-auto mb-2 rounded-md shadow-md" />
+            <p className="font-semibold">Φασόλια</p>
+          </div>
+        </Link>
+        <Link href="/products/placeholder/jam">
+          <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center hover:scale-105 transition-transform duration-300">
+            <img src="/images/Jam.png" alt="Μαρμελάδες" className="w-24 h-32 mx-auto mb-2 rounded-md shadow-md" />
+            <p className="font-semibold">Μαρμελάδες & Γλυκά</p>
+          </div>
+        </Link>
         <div className="bg-gray-100 p-4 rounded text-center border border-dashed border-gray-400">
           <p className="text-gray-500 italic">
             Η θέση για το επόμενο αυθεντικό προϊόν

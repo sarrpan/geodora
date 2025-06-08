@@ -1,8 +1,6 @@
-export const metadata = {
-  title: "Πρότεινε προϊόν | Geodora",
-  description:
-    "Έχεις ένα αυθεντικό ελληνικό προϊόν; Πρότεινέ το στη Geodora και γίνε μέρος του δικτύου μας για ποιοτική διανομή στην Ευρώπη.",
-};
+import { siteMeta } from "../../../lib/siteMeta";
+
+export const metadata = siteMeta.placeholder;
 
 import SuggestProductForm from '../../../components/SuggestProductForm';
 
