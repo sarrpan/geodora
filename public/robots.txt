@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://geodora.vercel.app/sitemap.xml
