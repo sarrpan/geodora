@@ -1,3 +1,10 @@
+export const metadata = {
+  title: "Πολιτική Απορρήτου | Geodora",
+  description:
+    "Διαβάστε την πολιτική απορρήτου της Geodora. Μάθετε πώς προστατεύουμε τα προσωπικά σας δεδομένα σύμφωνα με τον GDPR.",
+};
+
+
 export default function PrivacyPage() {
   return (
     <section className="p-8 max-w-3xl mx-auto">

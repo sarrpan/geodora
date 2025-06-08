@@ -1,6 +1,13 @@
 "use client";
 import { useState } from "react";
 
+export const metadata = {
+  title: "Επικοινωνία | Geodora",
+  description:
+    "Επικοινωνήστε με τη Geodora για ερωτήσεις, προτάσεις προϊόντων ή ενδιαφέρον συνεργασίας. Συμπληρώστε τη φόρμα ή στείλτε email.",
+};
+
+
 export default function EpikoinoniaPage() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);

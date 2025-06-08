@@ -8,6 +8,13 @@ import InterestFormSection from '../components/InterestFormSection';
 import LocationSection from '../components/LocationSection';
 
 
+export const metadata = {
+  title: "Geodora – Δίκτυο αυθεντικών ελληνικών προϊόντων",
+  description:
+    "Η Geodora μεταφέρει αυθεντικά ελληνικά προϊόντα από το χωράφι στο ράφι, με διαφάνεια, ποιοτικές συνεργασίες και σεβασμό στον παραγωγό και τον καταναλωτή.",
+};
+
+
 export default function HomePage() {
   return (
     <>

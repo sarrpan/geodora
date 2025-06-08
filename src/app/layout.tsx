@@ -19,8 +19,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Geodora",
-  description: "Δώρα της γης",
+  title: {
+    default: "Geodora",
+    template: "%s | Geodora",
+  },
+  description: "Αυθεντικά ελληνικά προϊόντα – απευθείας από τον παραγωγό.",
 };
 
 export default function RootLayout({

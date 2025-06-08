@@ -1,3 +1,10 @@
+export const metadata = {
+  title: "Πολιτική Cookies | Geodora",
+  description:
+    "Πώς χρησιμοποιούμε cookies στην ιστοσελίδα της Geodora. Μάθετε ποια δεδομένα συλλέγονται και πώς μπορείτε να τα ελέγξετε.",
+};
+
+
 export default function CookiesPage() {
   return (
     <main className="section-box text-body max-w-screen-md mx-auto">

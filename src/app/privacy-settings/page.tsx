@@ -1,3 +1,10 @@
+export const metadata = {
+  title: "Ρυθμίσεις Απορρήτου | Geodora",
+  description:
+    "Ελέγξτε τις ρυθμίσεις απορρήτου σας στη Geodora. Δεν χρησιμοποιούμε διαφημιστικά cookies — εσείς αποφασίζετε τι κοινοποιείται.",
+};
+
+
 export default function PrivacySettingsPage() {
   return (
     <main className="section-box text-body max-w-screen-md mx-auto">

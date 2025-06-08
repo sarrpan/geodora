@@ -2,6 +2,13 @@
 
 import Link from "next/link";
 
+export const metadata = {
+  title: "Συνεργασία με τη Geodora | Geodora",
+  description:
+    "Παραγωγός ή κατάστημα; Μάθετε πώς μπορείτε να συνεργαστείτε με τη Geodora με βάση την ποιότητα, την αυθεντικότητα και την αξιοπιστία.",
+};
+
+
 export default function SynergasiaPage() {
   return (
     <section className="p-6 md:p-10 max-w-5xl mx-auto text-[17px] leading-relaxed space-y-6">

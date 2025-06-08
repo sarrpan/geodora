@@ -1,5 +1,12 @@
 import Link from "next/link";
 
+export const metadata = {
+  title: "Τα προϊόντα μας | Geodora",
+  description:
+    "Εξερευνήστε τη γκάμα προϊόντων της Geodora: ελαιόλαδο, ελιές, βότανα, όσπρια, παραδοσιακά τρόφιμα και προτάσεις με ελληνική ταυτότητα.",
+};
+
+
 export default function Page() {
   return (
     <section className="p-6 md:p-10 max-w-5xl mx-auto text-[17px] leading-relaxed space-y-8">

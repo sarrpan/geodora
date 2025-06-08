@@ -2,6 +2,13 @@
 
 import { useState } from 'react';
 
+export const metadata = {
+  title: "Πρότεινε προϊόν | Geodora",
+  description:
+    "Έχεις ένα αυθεντικό ελληνικό προϊόν; Πρότεινέ το στη Geodora και γίνε μέρος του δικτύου μας για ποιοτική διανομή στην Ευρώπη.",
+};
+
+
 export default function SuggestProductPage() {
   const [form, setForm] = useState({
     name: '',

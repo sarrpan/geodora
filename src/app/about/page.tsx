@@ -1,3 +1,10 @@
+export const metadata = {
+  title: "Σχετικά με τη Geodora | Geodora",
+  description:
+    "Η Geodora συνδέει αυθεντικά ελληνικά προϊόντα υψηλής ποιότητας με επιλεγμένα σημεία πώλησης στην Ευρώπη, με σεβασμό στον παραγωγό και τον καταναλωτή.",
+};
+
+
 export default function AboutPage() {
   return (
     <section className="p-6 md:p-10 max-w-5xl mx-auto text-[17px] leading-relaxed space-y-6">

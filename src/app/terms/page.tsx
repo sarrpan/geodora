@@ -1,3 +1,10 @@
+export const metadata = {
+  title: "Όροι Χρήσης | Geodora",
+  description:
+    "Διαβάστε τους όρους χρήσης της ιστοσελίδας Geodora. Η χρήση του site προϋποθέτει την αποδοχή των όρων μας.",
+};
+
+
 export default function TermsPage() {
   return (
     <section className="p-8 max-w-3xl mx-auto">
