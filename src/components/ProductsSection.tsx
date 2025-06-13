@@ -11,6 +11,7 @@ export default function ProductsSection() {
 
   useEffect(() => {
     if (!wheelRef.current) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -26,6 +27,19 @@ export default function ProductsSection() {
     observer.observe(wheelRef.current);
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout;
+
+    if (animate) {
+      interval = setInterval(() => {
+        setAnimate(false);
+        setTimeout(() => setAnimate(true), 50);
+      }, 20000);
+    }
+
+    return () => clearInterval(interval);
+  }, [animate]);
 
   const textBlocks = [
     {
@@ -74,43 +88,31 @@ export default function ProductsSection() {
       {/* Product Wheel + CTA */}
       <div className="w-[90%] max-w-screen-xl mx-auto mt-10 mb-12">
         <div className="about-section-columns product-cta-columns flex flex-col lg:flex-row items-center justify-center gap-10">
-          {/* Product Wheel */}
-          <div className="w-full lg:w-[60%] flex justify-center">
+          {/* Product Wheel as SVG */}
+          <div className="w-full lg:w-[60%] flex flex-col items-center justify-center">
             <div
               ref={wheelRef}
-              className={`product-wheel ${animate ? 'wheel-animate' : ''} relative aspect-square rounded-full border border-gray-200 ring-2 ring-[#C8E2C9] w-[250px] md:w-[350px] bg-[#EEF5ED] p-8 overflow-visible`}
+              className={`${animate ? 'wheel-animate' : ''} relative w-[250px] md:w-[350px] lg:w-[500px]`}
             >
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-4 rounded-full border shadow z-10">
-                <Image src="/images/geodora-logo.svg" alt="Geodora Logo" width={60} height={60} />
-              </div>
+              <Image
+                src="/images/roda.svg"
+                alt="Ρόδα προϊόντων"
+                width={500}
+                height={500}
+                className="w-full h-auto select-none"
+                priority
+              />
 
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                <div className="bg-white rounded-full border shadow p-3 transition-transform">
-                  <Image src="/images/olives.png" alt="Ελαιοκομικά" width={32} height={32} className="rounded-full object-cover" />
-                </div>
-              </div>
-
-              <div className="absolute top-1/4 right-0 transform translate-x-[20%] -translate-y-1/2 flex flex-col items-center">
-                <div className="bg-white rounded-full border shadow p-3 transition-transform">
-                  <Image src="/images/oregano.png" alt="Βότανα" width={32} height={32} className="rounded-full object-cover" />
-                </div>
-              </div>
-
-              <div className="absolute top-1/4 left-0 transform -translate-x-[20%] -translate-y-1/2 flex flex-col items-center">
-                <div className="bg-white rounded-full border shadow p-3 transition-transform">
-                  <Image src="/images/honey.png" alt="Μέλι & Μαρμελάδες" width={32} height={32} className="rounded-full object-cover" />
-                </div>
-              </div>
-
-              <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 flex flex-col items-center z-10">
-                <div className="bg-amber-600 rounded-full border shadow p-3 transition-transform heartbeat">
-                  <span className="text-white text-lg font-bold">?</span>
-                </div>
-                <span className="absolute top-full mt-1 left-1/2 transform -translate-x-1/2 whitespace-nowrap text-xs md:text-sm font-semibold text-center">
-                  Το επόμενο προϊόν
-                </span>
+              {/* Μόνο το ερωτηματικό */}
+              <div className="absolute left-1/2 top-[87%] -translate-x-1/2 -translate-y-1/2 z-10 w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] md:w-[54px] md:h-[54px] lg:w-[56px] lg:h-[56px] flex items-center justify-center">
+                <span className="text-white text-2xl sm:text-4xl font-bold">?</span>
               </div>
             </div>
+
+            {/* Κείμενο κάτω από τη ρόδα */}
+            <p className="text-sm md:text-base font-semibold text-center mt-6 text-[#2E3A25] animate-heartbeat">
+              Το επόμενο προϊόν
+            </p>
           </div>
 
           {/* CTA Box */}
@@ -123,7 +125,7 @@ export default function ProductsSection() {
               </p>
               <div className="flex justify-center mt-8 mb-4">
                 <Link href="/products/suggest-product">
-                  <button className="bg-[#e67b00] hover:bg-[#2E3A25] text-white font-semibold py-2 px-6 rounded-full">
+                  <button className="bg-[#e67b00] hover:bg-[#2E3A25] text-white text-lg md:text-xl font-semibold py-2 px-6 rounded-full">
                     Πρότεινε προϊόν
                   </button>
                 </Link>
@@ -142,12 +144,13 @@ export default function ProductsSection() {
         .wheel-animate {
           animation: wheelLoad 0.8s ease-out;
         }
+
         @keyframes heartbeat {
           0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.1); }
+          50% { transform: scale(1.15); }
         }
-        .heartbeat {
-          animation: heartbeat 2s ease-in-out infinite;
+        .animate-heartbeat {
+          animation: heartbeat 1.8s ease-in-out infinite;
         }
       `}</style>
     </section>
