@@ -15,6 +15,7 @@ export function generateMetadata(): Metadata {
 }
 
 const placeholderImages = [
+
   { image: "/images/OliveOilLogo.svg" },
   { image: "/images/OlivesLogo.svg" },
   { image: "/images/OreganoLogo.svg" },
@@ -29,6 +30,7 @@ export default function PlaceholderPage({ params }: any) {
     herbs: 2,
     beans: 3,
     honey: 4,
+ 
   };
 
   const index = indexMap[params.slug];

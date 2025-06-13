@@ -59,7 +59,7 @@ export default function Page() {
         </Link>
         <Link href="/products/placeholder/jam">
           <div className="bg-[rgba(229,229,224,1)] p-4 rounded text-center hover:scale-105 transition-transform duration-300">
-            <img src="/images/Jam.png" alt="Μαρμελάδες" className="w-24 h-32 mx-auto mb-2 rounded-md shadow-md" />
+            <img src="/images/jam.png" alt="Μαρμελάδες" className="w-24 h-32 mx-auto mb-2 rounded-md shadow-md" />
             <p className="font-semibold">Μαρμελάδες & Γλυκά</p>
           </div>
         </Link>
