@@ -12,7 +12,7 @@ export default function ProductsPage() {
     { href: '/products/placeholder/olives', img: 'Olives.png', label: t('products.1') },
     { href: '/products/placeholder/herbs', img: 'Oregano.png', label: t('products.2') },
     { href: '/products/placeholder/beans', img: 'Beans.png', label: t('products.3') },
-    { href: '/products/placeholder/jam', img: 'Jam.png', label: t('products.4') }
+    { href: '/products/placeholder/jam', img: 'Jam&Sweets.png', label: t('products.4') }
   ];
 
   return (
