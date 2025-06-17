@@ -30,10 +30,7 @@ export default function ProductsSection() {
     return () => observer.disconnect();
   }, []);
 
-<<<<<<< HEAD
   // ΝΕΟ: useEffect για την επανάληψη της animation
-=======
->>>>>>> c3458b0103c84b373d9e7011b7cdeeeaf0bcfce2
   useEffect(() => {
     let interval: NodeJS.Timeout;
 
@@ -47,23 +44,10 @@ export default function ProductsSection() {
     return () => clearInterval(interval);
   }, [animate]);
 
-<<<<<<< HEAD
   const textBlocks = [0, 1].map(index => ({
     title: t(`descriptionBlocks.${index}.title`),
     text: t(`descriptionBlocks.${index}.text`),
   }));
-=======
-  const textBlocks = [
-    {
-      title: "Μικρή αλλά ποιοτική αρχική γκάμα",
-      text: `Η Geodora ξεκίνησε με μια μικρή, επιλεγμένη γκάμα — ελαιόλαδο, ελιές, βότανα και αποξηραμένα τρόφιμα — που επιλέγονται, τυποποιούνται και διακινούνται με δική μας ευθύνη, υπό την ετικέτα Geodora.`,
-    },
-    {
-      title: "Αναζητούμε αυθεντικά προϊόντα",
-      text: `Παράλληλα, αναζητούμε προϊόντα που ξεχωρίζουν για την ποιότητά τους και σχετίζονται είτε με τις κατηγορίες που ήδη διακινούμε, είτε ανοίγουν δρόμους σε νέες, εξίσου αξιόλογες κατευθύνσεις.`,
-    },
-  ];
->>>>>>> c3458b0103c84b373d9e7011b7cdeeeaf0bcfce2
 
   return (
     <section className="section-box bg-[#EEF5ED] text-[#2E3A25]">
@@ -99,12 +83,8 @@ export default function ProductsSection() {
       {/* Product Wheel + CTA */}
       <div className="w-[90%] max-w-screen-xl mx-auto mt-10 mb-12">
         <div className="about-section-columns product-cta-columns flex flex-col lg:flex-row items-center justify-center gap-10">
-<<<<<<< HEAD
-          
+
           {/* ΝΕΟ: Product Wheel as SVG */}
-=======
-          {/* Product Wheel as SVG */}
->>>>>>> c3458b0103c84b373d9e7011b7cdeeeaf0bcfce2
           <div className="w-full lg:w-[60%] flex flex-col items-center justify-center">
             <div
               ref={wheelRef}
@@ -112,35 +92,21 @@ export default function ProductsSection() {
             >
               <Image
                 src="/images/roda.svg"
-<<<<<<< HEAD
                 alt={t('productWheel.logoAlt')} // Χρησιμοποιεί το υπάρχον alt text
-=======
-                alt="Ρόδα προϊόντων"
->>>>>>> c3458b0103c84b373d9e7011b7cdeeeaf0bcfce2
                 width={500}
                 height={500}
                 className="w-full h-auto select-none"
                 priority
               />
-<<<<<<< HEAD
-=======
 
-              {/* Μόνο το ερωτηματικό */}
->>>>>>> c3458b0103c84b373d9e7011b7cdeeeaf0bcfce2
               <div className="absolute left-1/2 top-[87%] -translate-x-1/2 -translate-y-1/2 z-10 w-[44px] h-[44px] sm:w-[48px] sm:h-[48px] md:w-[54px] md:h-[54px] lg:w-[56px] lg:h-[56px] flex items-center justify-center">
                 <span className="text-white text-2xl sm:text-4xl font-bold">?</span>
               </div>
             </div>
 
-<<<<<<< HEAD
             {/* ΝΕΟ: Κείμενο κάτω από τη ρόδα */}
             <p className="text-sm md:text-base font-semibold text-center mt-6 text-[#2E3A25] animate-heartbeat">
               {t('productWheel.nextProduct')}
-=======
-            {/* Κείμενο κάτω από τη ρόδα */}
-            <p className="text-sm md:text-base font-semibold text-center mt-6 text-[#2E3A25] animate-heartbeat">
-              Το επόμενο προϊόν
->>>>>>> c3458b0103c84b373d9e7011b7cdeeeaf0bcfce2
             </p>
           </div>
 
@@ -150,14 +116,9 @@ export default function ProductsSection() {
               <p className="text-body" dangerouslySetInnerHTML={{ __html: t('cta.text') }} />
               <div className="flex justify-center mt-8 mb-4">
                 <Link href="/products/suggest-product">
-<<<<<<< HEAD
                   {/* ΝΕΟ: Ενημερωμένες κλάσεις μεγέθους στο κουμπί */}
                   <button className="bg-[#e67b00] hover:bg-[#2E3A25] text-white text-lg md:text-xl font-semibold py-2 px-6 rounded-full">
                     {t('cta.button')}
-=======
-                  <button className="bg-[#e67b00] hover:bg-[#2E3A25] text-white text-lg md:text-xl font-semibold py-2 px-6 rounded-full">
-                    Πρότεινε προϊόν
->>>>>>> c3458b0103c84b373d9e7011b7cdeeeaf0bcfce2
                   </button>
                 </Link>
               </div>

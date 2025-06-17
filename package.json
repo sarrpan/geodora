@@ -10,13 +10,9 @@
   },
   "dependencies": {
     "framer-motion": "^12.12.2",
-<<<<<<< HEAD
     "geist": "^1.4.2",
     "next": "14.2.4",
     "next-intl": "^4.1.0",
-=======
-    "next": "^15.3.3",
->>>>>>> c3458b0103c84b373d9e7011b7cdeeeaf0bcfce2
     "nodemailer": "^7.0.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
