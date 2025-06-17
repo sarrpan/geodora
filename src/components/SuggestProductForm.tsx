@@ -1,8 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function SuggestProductForm() {
+  const t = useTranslations('SuggestProductForm');
+
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -24,13 +27,20 @@ export default function SuggestProductForm() {
       const response = await fetch('/api/send-product', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.comments, // ✅ το πεδίο που διαβάζει ο server
+          productType: form.productType,
+          origin: form.origin,
+          packaging: form.packaging,
+        }),
       });
 
       const result = await response.json();
 
       if (response.ok) {
-        alert('✅ Η πρόταση υποβλήθηκε με επιτυχία!');
+        alert(t('alerts.success'));
         setForm({
           name: '',
           email: '',
@@ -40,19 +50,20 @@ export default function SuggestProductForm() {
           comments: '',
         });
       } else {
-        alert(`❌ Σφάλμα: ${result.error || 'Αποτυχία αποστολής.'}`);
+        alert(`❌ ${t('alerts.error')}: ${result.error || t('alerts.genericError')}`);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('❌ Σφάλμα κατά την αποστολή της πρότασης.');
+      alert(t('alerts.error'));
     }
   };
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {/* όλα τα input παραμένουν όπως τα έχεις */}
       <div>
         <label className="block font-medium mb-1">
-          Ονοματεπώνυμο <span className="text-red-500">*</span>
+          {t('labels.name')} <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -65,7 +76,7 @@ export default function SuggestProductForm() {
       </div>
       <div>
         <label className="block font-medium mb-1">
-          Email <span className="text-red-500">*</span>
+          {t('labels.email')} <span className="text-red-500">*</span>
         </label>
         <input
           type="email"
@@ -78,7 +89,7 @@ export default function SuggestProductForm() {
       </div>
       <div>
         <label className="block font-medium mb-1">
-          Τύπος προϊόντος <span className="text-red-500">*</span>
+          {t('labels.productType')} <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -91,7 +102,7 @@ export default function SuggestProductForm() {
       </div>
       <div>
         <label className="block font-medium mb-1">
-          Προέλευση / Περιοχή <span className="text-red-500">*</span>
+          {t('labels.origin')} <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -103,7 +114,7 @@ export default function SuggestProductForm() {
         />
       </div>
       <div>
-        <label className="block font-medium mb-1">Συσκευασία / Διαθεσιμότητα</label>
+        <label className="block font-medium mb-1">{t('labels.packaging')}</label>
         <input
           type="text"
           name="packaging"
@@ -113,7 +124,7 @@ export default function SuggestProductForm() {
         />
       </div>
       <div>
-        <label className="block font-medium mb-1">Προαιρετικά σχόλια</label>
+        <label className="block font-medium mb-1">{t('labels.comments')}</label>
         <textarea
           name="comments"
           value={form.comments}
@@ -126,7 +137,7 @@ export default function SuggestProductForm() {
         type="submit"
         className="bg-[#b44d00] hover:bg-[#9f3c00] text-white font-semibold px-6 py-2 rounded shadow-md"
       >
-        Υποβολή πρότασης
+        {t('button')}
       </button>
     </form>
   );

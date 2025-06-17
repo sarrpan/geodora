@@ -1,21 +1,41 @@
+// src/components/Footer.tsx
+
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Footer() {
+  const t = useTranslations("Footer");
   const pathname = usePathname();
   const [openMenu, setOpenMenu] = useState(false);
   const [openUseful, setOpenUseful] = useState(false);
 
+  const menuLinks = [
+    { href: "/", label: t("menu.home") },
+    { href: "/products", label: t("menu.products") },
+    { href: "/synergasia", label: t("menu.collaboration") },
+    { href: "/contact", label: t("menu.contact") },
+    { href: "/about", label: t("menu.about") },
+  ];
+
+  const legalLinks = [
+    { href: "/terms", label: t("legal.terms") },
+    { href: "/privacy", label: t("legal.privacy") },
+    { href: "/cookies", label: t("legal.cookies") },
+    { href: "/privacy-settings", label: t("legal.privacySettings") },
+  ];
+
+  // ΒΕΛΤΙΩΣΗ: Όταν ανοίγει το ένα μενού, κλείνει το άλλο.
   const handleMenuToggle = () => {
     setOpenMenu(!openMenu);
-    setOpenUseful(false);
+    if (!openMenu) setOpenUseful(false);
   };
   const handleUsefulToggle = () => {
     setOpenUseful(!openUseful);
-    setOpenMenu(false);
+    if (!openUseful) setOpenMenu(false);
   };
 
   const linkClass = (href: string) =>
@@ -23,155 +43,96 @@ export default function Footer() {
       pathname === href ? "text-orange-600 font-semibold" : "font-normal"
     }`;
 
+  const SocialAndLanguageLinks = () => (
+    <div className="flex justify-center items-center flex-wrap gap-x-8 gap-y-4 mt-6">
+      <div className="flex gap-5 items-center">
+        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-75">
+          <Image src="/images/facebook.svg" alt={t('alt.facebook')} width={28} height={28} />
+        </a>
+        <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-75">
+          <Image src="/images/twitter.svg" alt={t('alt.twitter')} width={28} height={28} />
+        </a>
+        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-75">
+          <Image src="/images/youtube.svg" alt={t('alt.youtube')} width={28} height={28} />
+        </a>
+      </div>
+      <LanguageSwitcher variant="inline" />
+    </div>
+  );
+
   return (
-    <footer className="border-t border-gray-200 pt-6 pb-10 text-gray-700 shadow-inner mt-12">
-      <div className="max-w-[1024px] w-full mx-auto px-4 md:px-8">
-        {/* Desktop layout for >1024px */}
-        <div className="hidden lg:flex footer-desktop flex-col items-center text-sm mb-8 gap-y-6">
-          <div className="flex items-center gap-1 justify-center">
-            <Image src="/images/geodora-logo.svg" alt="Logo" width={40} height={40} className="self-center -mt-1" />
+    <footer className="border-t border-gray-200 pt-6 pb-10 text-gray-700 shadow-inner mt-12 bg-[#f9f9f3]">
+      <div className="max-w-screen-lg mx-auto px-4 md:px-8">
+        
+        {/* ----- Desktop Layout ----- */}
+        <div className="hidden lg:flex flex-col items-center text-sm mb-8 gap-y-6">
+          <Link href="/" className="flex items-center gap-1 justify-center">
+            <Image src="/images/logo.svg" alt={t('alt.logo')} width={40} height={40} className="self-center -mt-1" />
             <div className="flex items-center gap-2 mt-4">
-              <span className="text-title-xl text-[rgba(75,46,30,1)]">eodora –</span>
-              <span className="text-subtitle italic">
-                Ειλικρινές και ποιοτικό δίκτυο διανομής αυθεντικών ελληνικών προϊόντων.
-              </span>
+              <span className="text-2xl font-bold text-[rgba(75,46,30,1)]">eodora –</span>
+              <span className="text-base italic text-orange-600">{t("tagline")}</span>
             </div>
+          </Link>
+          <div className="flex justify-center items-center gap-4">
+            {menuLinks.map(link => <Link key={link.href} href={link.href} className={linkClass(link.href)}>{link.label}</Link>)}
           </div>
-
-          <div className="flex justify-center items-center">
-            <div className="flex gap-4">
-              <Link href="/" className={linkClass("/")}>Αρχική</Link>
-              <Link href="/products" className={linkClass("/products")}>Προϊόντα</Link>
-              <Link href="/synergasia" className={linkClass("/synergasia")}>Συνεργασία</Link>
-              <Link href="/contact" className={linkClass("/contact")}>Επικοινωνία</Link>
-              <Link href="/about" className={linkClass("/about")}>Σχετικά</Link>
-            </div>
+          <div className="flex justify-center items-center gap-4">
+            {legalLinks.map(link => <Link key={link.href} href={link.href} className={linkClass(link.href)}>{link.label}</Link>)}
           </div>
-
-          <div className="flex justify-center items-center">
-            <div className="flex gap-4">
-              <Link href="/terms" className={linkClass("/terms")}>Όροι χρήσης</Link>
-              <Link href="/privacy" className={linkClass("/privacy")}>Πολιτική απορρήτου</Link>
-              <Link href="/cookies" className={linkClass("/cookies")}>Cookies</Link>
-              <Link href="/privacy-settings" className={linkClass("/privacy-settings")}>Ρυθμίσεις απορρήτου</Link>
-            </div>
+          <div className="text-center space-y-2">
+            <p>{t('contact.email')}: <a href="mailto:info@geodora.gr" className="underline hover:text-orange-600">info@geodora.gr</a> | {t('contact.phone')}: +30 6936181744</p>
+            <p>{t('contact.locationHeader')}: {t('contact.locationValue')} | {t('contact.hoursHeader')}: <span className="font-bold">09:00 – 17:00</span></p>
           </div>
-
-          <div className="footer-contact flex gap-8">
-            <div className="footer-contact-row-1 flex gap-8">
-              <p>Email: <a href="mailto:info@geodora.gr" className="underline hover:text-orange-600">info@geodora.gr</a></p>
-              <p>Τηλέφωνο: +30 6936181744</p>
-            </div>
-            <div className="footer-contact-row-2 flex gap-8">
-              <p>Έδρα: Πτολεμαΐδα, </p>
-              <p>Ώρες λειτουργίας: Δευ – Παρ: <span className="font-bold">09:00 – 17:00</span></p>
-            </div>
-          </div>
-
-          <div className="flex justify-center items-center">
-            <div className="flex gap-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <Image src="/images/facebook.svg" alt="Facebook" width={38} height={38} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <Image src="/images/twitter.svg" alt="Twitter" width={38} height={38} />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                <Image src="/images/youtube.svg" alt="YouTube" width={38} height={38} />
-              </a>
-            </div>
-          </div>
+          <SocialAndLanguageLinks />
         </div>
 
-        {/* Mobile Layout <1024px */}
-        <div className="lg:hidden ">
-          {/* Logo and tagline */}
+        {/* ----- Mobile Layout ----- */}
+        <div className="lg:hidden">
           <div className="flex items-center gap-4 mb-6">
-            <Image src="/images/geodora-logo.svg" alt="Logo" width={60} height={60} />
+            <Image src="/images/logo.svg" alt={t('alt.logo')} width={50} height={50} />
             <div>
-              <h3 className="text-subtitle text-[#4b2e1e]">Geodora</h3>
-              <p className="text-body italic leading-snug">
-                Ειλικρινές και ποιοτικό δίκτυο διανομής<br />
-                αυθεντικών ελληνικών προϊόντων.
-              </p>
+              <h3 className="text-xl font-bold text-[#4b2e1e]">Geodora</h3>
+              <p className="text-sm italic leading-snug">{t("tagline")}</p>
             </div>
           </div>
-
-          {/* Accordion Sections */}
-          <div className="mb-6 space-y-3 text-body">
+          <div className="space-y-3 text-base">
             <div className="border rounded-md overflow-hidden">
-              <button onClick={handleMenuToggle} aria-expanded={openMenu} className="w-full flex justify-between items-center px-4 py-2 font-medium">
-                Μενού
-                <svg className={`w-4 h-4 transform transition-transform duration-200 ${openMenu ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+              <button onClick={handleMenuToggle} className="w-full flex justify-between items-center px-4 py-3 font-medium">
+                {t('menu.title')}
+                <svg className={`w-5 h-5 transform transition-transform ${openMenu ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </button>
-              <div aria-hidden={!openMenu} className={`transition-[max-height] duration-200 ease-in-out overflow-hidden ${openMenu ? "max-h-60" : "max-h-0"}`}>
-                <div className="px-4 pb-2 flex flex-col gap-1">
-                  <Link href="/" onClick={() => setOpenMenu(false)} className={linkClass("/")}>Αρχική</Link>
-                  <Link href="/products" onClick={() => setOpenMenu(false)} className={linkClass("/products")}>Προϊόντα</Link>
-                  <Link href="/synergasia" onClick={() => setOpenMenu(false)} className={linkClass("/synergasia")}>Συνεργασία</Link>
-                  <Link href="/contact" onClick={() => setOpenMenu(false)} className={linkClass("/contact")}>Επικοινωνία</Link>
-                  <Link href="/about" onClick={() => setOpenMenu(false)} className={linkClass("/about")}>Σχετικά</Link>
+              <div className={`transition-all duration-300 ease-in-out overflow-hidden ${openMenu ? "max-h-96" : "max-h-0"}`}>
+                <div className="py-2 flex flex-col">
+                  {/* Η ΑΛΛΑΓΗ ΕΙΝΑΙ ΕΔΩ: Προσθήκη onClick για να κλείνει το μενού */}
+                  {menuLinks.map(link => <Link key={link.href} href={link.href} onClick={() => setOpenMenu(false)} className={linkClass(link.href)}>{link.label}</Link>)}
                 </div>
               </div>
             </div>
-
             <div className="border rounded-md overflow-hidden">
-              <button onClick={handleUsefulToggle} aria-expanded={openUseful} className="w-full flex justify-between items-center px-4 py-2 font-medium">
-                Χρήσιμα
-                <svg className={`w-4 h-4 transform transition-transform duration-200 ${openUseful ? "rotate-180" : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+              <button onClick={handleUsefulToggle} className="w-full flex justify-between items-center px-4 py-3 font-medium">
+                {t('legal.title')}
+                <svg className={`w-5 h-5 transform transition-transform ${openUseful ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </button>
-              <div aria-hidden={!openUseful} className={`transition-[max-height] duration-200 ease-in-out overflow-hidden ${openUseful ? "max-h-60" : "max-h-0"}`}>
-                <div className="px-4 pb-2 flex flex-col gap-1">
-                  <Link href="/terms" onClick={() => setOpenUseful(false)} className={linkClass("/terms")}>Όροι χρήσης</Link>
-                  <Link href="/privacy" onClick={() => setOpenUseful(false)} className={linkClass("/privacy")}>Πολιτική απορρήτου</Link>
-                  <Link href="/cookies" onClick={() => setOpenUseful(false)} className={linkClass("/cookies")}>Cookies</Link>
-                  <Link href="/privacy-settings" onClick={() => setOpenUseful(false)} className={linkClass("/privacy-settings")}>Ρυθμίσεις απορρήτου</Link>
+              <div className={`transition-all duration-300 ease-in-out overflow-hidden ${openUseful ? "max-h-96" : "max-h-0"}`}>
+                <div className="py-2 flex flex-col">
+                  {/* ΚΑΙ ΕΔΩ: Προσθήκη onClick για να κλείνει το μενού */}
+                  {legalLinks.map(link => <Link key={link.href} href={link.href} onClick={() => setOpenUseful(false)} className={linkClass(link.href)}>{link.label}</Link>)}
                 </div>
               </div>
             </div>
           </div>
-          {/* Επικοινωνία */}
-          <div className="text-body text-center mb-6 px-4 grid grid-cols-1 gap-y-3">
-            <div>
-              <p className="font-semibold">Email</p>
-              <a href="mailto:info@geodora.gr" className="underline hover:text-orange-600">info@geodora.gr</a>
-            </div>
-            <div>
-              <p className="font-semibold">Τηλέφωνο</p>
-              <p>+30 210 0000000</p>
-            </div>
-            <div>
-              <p className="font-semibold">Έδρα</p>
-              <p>Πτολεμαΐδα, Ελλάδα</p>
-            </div>
-            <div>
-              <p className="font-semibold">Ώρες λειτουργίας</p>
-              <p>Δευ – Παρ: <span className="font-bold">09:00 – 17:00</span></p>
-            </div>
+          <div className="text-sm text-center my-6 space-y-3">
+            <div><p className="font-semibold">{t('contact.email')}</p><a href="mailto:info@geodora.gr" className="underline hover:text-orange-600">info@geodora.gr</a></div>
+            <div><p className="font-semibold">{t('contact.phone')}</p><p>+30 6936181744</p></div>
+            <div><p className="font-semibold">{t('contact.locationHeader')}</p><p>{t('contact.locationValue')}</p></div>
+            <div><p className="font-semibold">{t('contact.hoursHeader')}</p><p>{t('contact.hoursValue')} <span className="font-bold">09:00 – 17:00</span></p></div>
           </div>
-
-          {/* Social icons */}
-          <hr className="my-4" />
-            <div className="flex gap-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                <Image src="/images/facebook.svg" alt="Facebook" width={24} height={24} />
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                <Image src="/images/twitter.svg" alt="Twitter" width={24} height={24} />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                <Image src="/images/youtube.svg" alt="YouTube" width={24} height={24} />
-              </a>
-            </div>
+          <SocialAndLanguageLinks />
         </div>
 
-        {/* Copyright */}
-        <div className="text-body text-center border-t pt-4">
-          © 2025 Geodora. Όλα τα δικαιώματα διατηρούνται.
+        {/* ----- Copyright (Κοινό για όλες τις οθόνες) ----- */}
+        <div className="text-sm text-center border-t pt-5 mt-8">
+          {t('copyright')}
         </div>
       </div>
     </footer>

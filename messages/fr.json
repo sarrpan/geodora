@@ -1,0 +1,359 @@
+{
+  "Navbar": {
+    "alt": {
+      "logo": "Logo Geodora"
+    },
+    "tagline": "Dons de la terre",
+    "links": {
+      "home": "Accueil",
+      "products": "Produits",
+      "collaboration": "Collaboration",
+      "contact": "Contact",
+      "about": "À propos",
+      "more": "Plus",
+      "language": "Langue"
+    }
+  },
+  "HeroSection": {
+    "alt": "Oliveraie au lever du soleil",
+    "headingLine1": "La Terre offre,",
+    "headingLine2": "nous apportons la valeur",
+    "paragraph": "Du champ à l'étagère. Avec respect pour les gens et le produit.",
+    "buttonProducer": "Démarrer en tant que producteur",
+    "buttonRetailer": "Collaborer avec des magasins"
+  },
+  "AboutSection": {
+    "title": "Qui nous sommes",
+    "subtitle": "– Notre Vision",
+    "blocks": {
+      "idea": {
+        "title": "Notre Idée",
+        "text": "Geodora part d'une idée simple : que les produits — dons de la terre grecque — méritent d'atteindre ceux qui les apprécient, à un prix juste pour le producteur et avec moins de coûts inutiles pour le consommateur final."
+      },
+      "role": {
+        "title": "Notre Rôle",
+        "text": "Nous ne sommes pas de simples intermédiaires — nous construisons des relations et ajoutons de la valeur par la transparence. Nous sommes le maillon qui garantit la qualité, la fiabilité et l'équilibre tout au long du parcours."
+      },
+      "principle": {
+        "title": "Notre Principe",
+        "text": "Nous commençons avec peu de partenariats, des expéditions testées, et un respect sincère pour la personne qui produit et celle qui choisit de libérer de l'espace sur son étagère."
+      }
+    }
+  },
+  "AdvantagesSection": {
+    "title": "Pourquoi nous faire confiance",
+    "items": [
+      {
+        "title": "Transparence à chaque étape",
+        "text": "De l'accord avec le producteur à la livraison en magasin, tout est documenté et traçable."
+      },
+      {
+        "title": "Faible risque — petites collaborations testées",
+        "text": "Nous commençons avec de petites quantités et des envois d'essai pour construire la confiance, pas des promesses."
+      },
+      {
+        "title": "Organisation de l'exportation sans charges supplémentaires",
+        "text": "Le producteur ne s'occupe pas des procédures, des certifications ou du transport. Geodora gère l'ensemble du circuit."
+      },
+      {
+        "title": "Respect de la réalité de chaque producteur",
+        "text": "Nous travaillons en fonction des caractéristiques, des capacités et de la saisonnalité de chaque producteur — sans pression sur les volumes, et toujours avec respect pour le produit tel qu'il a été créé."
+      },
+      {
+        "title": "Pas d'abonnement — juste de la confiance",
+        "text": "Nous не demandons pas de frais de participation, d'engagements ou d'avances. Nous demandons seulement des produits de qualité — Geodora s'occupe du reste."
+      }
+    ]
+  },
+  "ProductsSection": {
+    "mainTitle": "Quels produits recherchons-nous",
+    "descriptionBlocks": [
+      {
+        "title": "Une gamme initiale petite mais de qualité",
+        "text": "Geodora a commencé avec une gamme restreinte et sélectionnée — huile d'olive, olives, herbes et fruits secs — qui sont sélectionnés, standardisés et distribués sous notre propre responsabilité, sous l'étiquette Geodora."
+      },
+      {
+        "title": "Nous recherchons des produits authentiques",
+        "text": "En parallèle, nous recherchons des produits qui se distinguent par leur qualité et qui sont soit liés aux catégories que nous gérons déjà, soit ouvrent des voies vers de nouvelles directions tout aussi remarquables."
+      }
+    ],
+    "philosophy": {
+      "title": "Notre Philosophie",
+      "text": "\"Geodora croit en l'agriculture durable, la collaboration respectueuse et la qualité qui mérite d'aller loin.\""
+    },
+    "productWheel": {
+      "logoAlt": "Logo Geodora",
+      "oilAlt": "Produits de l'olivier",
+      "herbsAlt": "Herbes",
+      "honeyAlt": "Miel & Confitures",
+      "nextProduct": "Le prochain produit"
+    },
+    "cta": {
+      "text": "Si vous avez quelque chose de qualitatif et d'authentique, contactez-nous.<br />Geodora élargit progressivement sa gamme,<br />en donnant la priorité à la stabilité, à un emballage adéquat et à la confiance mutuelle.",
+      "button": "Suggérer un produit"
+    }
+  },
+  "LocationSection": {
+    "title": "Où nous trouver",
+    "paragraph1": "Geodora est basée à Ptolemaïda et fonctionne comme une plateforme numérique.",
+    "paragraph2": "Nous n'avons pas de magasins physiques et n'investissons pas dans des installations permanentes — à moins que cela ne serve des besoins opérationnels spécifiques, comme la collecte temporaire de produits ou le soutien à des collaborations.",
+    "paragraph3": "Le choix de ce modèle n'est pas un hasard : il nous permet d'agir avec flexibilité, de limiter les coûts inutiles et de nous concentrer sur ce qui a une réelle valeur — la cohérence, la transparence et les partenariats significatifs."
+  },
+  "InterestFormSection": {
+    "title": "Manifestation d'intérêt",
+    "subtitle": "Si vous êtes intéressé par une collaboration avec Geodora, veuillez remplir vos coordonnées.",
+    "form": {
+      "namePlaceholder": "Nom",
+      "emailPlaceholder": "E-mail",
+      "roleSelect": {
+        "default": "Producteur / Magasin",
+        "producer": "Producteur",
+        "store": "Magasin"
+      },
+      "productTypePlaceholder": "Type de produit",
+      "commentPlaceholder": "Commentaire ou quantités (optionnel)",
+      "submitButton": "Envoyer"
+    }
+  },
+  "SuggestProductForm": {
+    "labels": {
+      "name": "Nom complet",
+      "email": "E-mail",
+      "productType": "Type de produit",
+      "origin": "Origine / Région",
+      "packaging": "Emballage / Disponibilité",
+      "comments": "Commentaires optionnels"
+    },
+    "button": "Soumettre la proposition",
+    "alerts": {
+      "success": "✅ Proposition soumise avec succès !",
+      "error": "❌ Erreur lors de la soumission de la proposition.",
+      "genericError": "Échec de la soumission."
+    }
+  },
+  "Footer": {
+    "tagline": "Un réseau de distribution honnête et de qualité pour les produits grecs authentiques.",
+    "menu": {
+      "title": "Menu",
+      "home": "Accueil",
+      "products": "Produits",
+      "collaboration": "Collaboration",
+      "contact": "Contact",
+      "about": "À propos"
+    },
+    "legal": {
+      "title": "Utile",
+      "terms": "Conditions d'utilisation",
+      "privacy": "Politique de confidentialité",
+      "cookies": "Cookies",
+      "privacySettings": "Paramètres de confidentialité"
+    },
+    "contact": {
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "locationHeader": "Siège social",
+      "locationValue": "Ptolemaïda, Grèce",
+      "hoursHeader": "Horaires d'ouverture",
+      "hoursValue": "Lun – Ven : 09:00 – 17:00"
+    },
+    "copyright": "© 2025 Geodora. Tous droits réservés.",
+    "alt": {
+      "logo": "Logo Geodora",
+      "facebook": "Facebook",
+      "twitter": "Twitter",
+      "youtube": "YouTube"
+    }
+  },
+  "HomePage": {
+    "meta": {
+      "title": "Accueil | Geodora",
+      "description": "Geodora : Un réseau de distribution pour les produits grecs authentiques. Nous connectons les producteurs aux magasins avec transparence et respect."
+    }
+  },
+  "AboutPage": {
+    "meta": {
+      "title": "À propos de nous | Geodora",
+      "description": "Apprenez-en davantage sur l'initiative Geodora, notre vision et les valeurs qui guident la création d'un réseau de confiance pour les produits grecs authentiques."
+    },
+    "title": "À propos de Geodora",
+    "paragraph1": "Geodora est une initiative petite mais dynamique, créée pour connecter des produits grecs authentiques de haute qualité avec des points de vente sélectionnés. Nous avons commencé avec le respect de la terre, des personnes qui la cultivent et de la valeur d'un produit de qualité.",
+    "paragraph2": "Nous aspirons à créer un réseau de partenariats basé sur la confiance et la cohérence, où chaque produit a un visage et une histoire. Nous sélectionnons des produits avec une identité authentique, de producteurs qui partagent les mêmes valeurs : qualité, transparence, relation humaine.",
+    "paragraph3": "Nous croyons en une approche simple mais essentielle : moins de mots, plus d'action. Geodora se construit pas à pas, avec un risque maîtrisé, des choix prudents et un soin authentique. Notre objectif n'est pas la production de masse, mais la stabilité et la collaboration honnête.",
+    "image": {
+      "alt": "Collaboration avec un producteur",
+      "caption": "Produits grecs sélectionnés du champ à l'étagère — avec respect pour les gens et l'environnement."
+    }
+  },
+  "ContactPage": {
+    "meta": {
+      "title": "Contact | Geodora",
+      "description": "Prenez contact avec notre équipe."
+    },
+    "title": "Formulaire de contact",
+    "intro": "Envoyez-nous votre message ou contactez-nous par e-mail :",
+    "emailLabel": "E-mail de contact",
+    "form": {
+      "name": "Nom",
+      "email": "E-mail",
+      "message": "Message",
+      "submit": "Envoyer"
+    },
+    "errorMessage": "Une erreur s'est produite lors de l'envoi.",
+    "errorGeneric": "Veuillez réessayer plus tard.",
+    "successMessage": "✅ Votre message a été envoyé avec succès !"
+  },
+  "CookiesPage": {
+    "meta": {
+      "title": "Politique de cookies",
+      "description": "Apprenez-en plus sur l'utilisation des cookies sur le site de Geodora."
+    },
+    "title": "Politique de cookies",
+    "p1": "Les cookies sont de petits fichiers stockés dans votre navigateur qui aident à améliorer votre expérience de navigation.",
+    "p2": "Le site de Geodora utilise uniquement des cookies strictement nécessaires, comme pour la sélection de la langue et le fonctionnement sécurisé du site. Nous n'utilisons pas de cookies de suivi, de cookies publicitaires ou de cookies tiers.",
+    "p3": "Si de nouvelles fonctionnalités basées sur les cookies sont ajoutées (par exemple, analyses, préférences), vous en serez informé et aurez la possibilité de donner ou de refuser votre consentement.",
+    "p4": "Vous pouvez modifier vos paramètres de cookies à tout moment via les paramètres de votre navigateur ou la page 'Paramètres de confidentialité'."
+  },
+  "PrivacyPage": {
+    "meta": {
+      "title": "Politique de confidentialité",
+      "description": "Découvrez comment nous gérons vos données personnelles avec respect et transparence."
+    },
+    "title": "Politique de confidentialité",
+    "intro": "Geodora respecte et protège les données personnelles de ses visiteurs. Cette politique décrit comment nous collectons, utilisons et gérons vos données conformément au Règlement général sur la protection des données (RGPD).",
+    "points": [
+      "Nous ne collectons aucune donnée personnelle sans votre consentement explicite.",
+      "Nous pouvons collecter des données via le formulaire de contact (par exemple, nom, e-mail) uniquement dans le but de répondre aux demandes.",
+      "Nous ne partageons aucune donnée avec des tiers sans base légale ou consentement préalable.",
+      "Les données sont stockées en toute sécurité и uniquement pour la durée nécessaire à la finalité pour laquelle elles ont été collectées.",
+      "Vous avez le droit d'accéder, de corriger ou de supprimer vos données personnelles à tout moment."
+    ],
+    "footer": "Pour toute demande concernant vos données, vous pouvez nous contacter via la page de contact."
+  },
+  "PrivacySettingsPage": {
+    "meta": {
+      "title": "Paramètres de confidentialité",
+      "description": "Gérez vos préférences concernant les cookies et les données personnelles."
+    },
+    "title": "Paramètres de confidentialité",
+    "p1": "Geodora respecte pleinement votre vie privée. Actuellement, le site n'utilise pas de cookies de suivi et ne collecte pas de données personnelles sans votre consentement.",
+    "p2": "Si des fonctionnalités impliquant des cookies ou d'autres technologies de collecte de données sont ajoutées à l'avenir (par exemple, pour des statistiques ou des préférences), un avis clair apparaîtra et vous aurez la possibilité de donner ou de refuser votre consentement.",
+    "p3": "Notre philosophie est simple : aucune fonction qui enregistre ou stocke des données n'est activée sans notification préalable et consentement explicite.",
+    "p4": "Si vous souhaitez modifier vos préférences à l'avenir, vous aurez toujours la possibilité de le faire via cette page ou les paramètres de votre navigateur."
+  },
+  "ProductsPage": {
+    "meta": {
+      "title": "Nos produits",
+      "description": "Découvrez les produits authentiques proposés par Geodora, de l'huile d'olive aux aliments traditionnels."
+    },
+    "title": "Nos produits",
+    "intro": [
+      "Geodora commence avec des produits qui représentent l'authenticité, la qualité et la valeur nutritive. Notre objectif est d'offrir des articles enracinés dans la production grecque qui conservent leur identité et parviennent au consommateur avec soin et cohérence.",
+      "Notre gamme se dessine progressivement — non pas en fonction de l'attrait de masse mais de la substance. Nous commençons avec des produits tels que l'huile d'olive extra vierge, les olives, les herbes, les légumineuses (fraîches et cuites), et des aliments traditionnels sélectionnés comme les confitures, les bonbons à la cuillère ou les plats cuisinés en bocal.",
+      "Si vous proposez un produit qui correspond à notre philosophie, nous sommes là pour en discuter. Nous n'attendons pas une 'phase deux' — chaque proposition sérieuse est évaluée avec soin et respect."
+    ],
+    "products": ["Huile d'olive", "Olives", "Herbes", "Haricots", "Confitures & Bonbons"],
+    "nextProduct": "Une place réservée pour le prochain produit authentique",
+    "ctaTitle": "Vous cherchez quelque chose de spécifique ?",
+    "ctaText": "Si vous représentez un magasin et que vous recherchez un produit grec authentique et de haute qualité que vous ne voyez pas dans notre gamme, n'hésitez pas à le suggérer. S'il correspond aux valeurs et à la philosophie de Geodora, nous ferons de notre mieux pour l'inclure dans nos futures offres.",
+    "suggestButton": "Suggérer un produit"
+  },
+  "PlaceholderPage": {
+    "meta": {
+      "title": "Produit de remplacement",
+      "description": "Cette page produit n'est pas encore disponible."
+    },
+    "title": "Produit de remplacement",
+    "imageAlt": "Produit de remplacement",
+    "description": "Ce produit n'est pas encore disponible. Une fois la recherche de producteurs ou le processus de conditionnement terminé, cette page sera mise à jour avec des informations complètes. Merci de votre compréhension et de votre intérêt.",
+    "back": "Retour aux produits"
+  },
+  "SuggestProductPage": {
+    "meta": {
+      "title": "Suggérer un produit",
+      "description": "Suggérez un produit grec authentique à inclure dans la sélection de Geodora."
+    },
+    "title": "Suggérer un produit"
+  },
+  "CooperationPage": {
+    "meta": {
+      "title": "Collaboration",
+      "description": "Découvrez comment vous pouvez collaborer avec Geodora — en tant que producteur ou en tant que magasin."
+    },
+    "title": "Collaboration",
+    "intro": {
+      "strong": "Geodora recherche des partenaires partageant les mêmes valeurs.",
+      "text": "Que vous soyez un producteur qui souhaite voir son produit voyager avec dignité, ou un magasin à la recherche de produits grecs sélectionnés avec une identité, nous sommes là pour construire quelque chose de significatif — sans intermédiaires, sans pression, avec une confiance mutuelle."
+    },
+    "buttons": {
+      "producer": "Je suis producteur",
+      "store": "J'ai un magasin"
+    },
+    "producers": {
+      "title": "Pour les producteurs",
+      "introStrong": "Nous commençons progressivement, en privilégiant la cohérence.",
+      "introText": "Geodora ne suit pas un modèle de stockage de masse. Nous abordons chaque partenariat de manière réaliste, en construisant d'abord des flux de distribution petits et testés pour garantir la fiabilité.",
+      "points": [
+        {
+          "title": "Coopération avec identité — pas de revente",
+          "text": "Geodora n'agit pas comme un simple intermédiaire ou revendeur. Tous les produits sont commercialisés sous notre marque et portent notre garantie de qualité. Cela construit une image unifiée et attire des clients en quête de cohérence et de confiance. La collaboration est basée sur une vision commune, pas sur des ventes opportunistes."
+        },
+        {
+          "title": "Transparence à chaque étape",
+          "text": "Le producteur se concentre sur la qualité et la production, tandis que Geodora s'occupe de la distribution, de la présentation et des processus commerciaux. Tout est convenu à l'avance et exécuté de manière professionnelle et transparente."
+        },
+        {
+          "title": "Faible risque — coopération testée",
+          "text": "Nous ne demandons pas d'engagements initiaux. La coopération commence par de petits lots pour construire la confiance pas à pas. Si le produit performe bien, le partenariat peut devenir plus stable. Il n'y a rien à perdre — seulement à gagner."
+        },
+        {
+          "title": "La responsabilité commerciale est transférée à Geodora",
+          "text": "Le producteur n'est pas chargé de la promotion, des contacts, de l'emballage ou du transport. Une fois que nous achetons le produit, Geodora gère entièrement son parcours commercial — pour que le producteur puisse se concentrer sur la production."
+        },
+        {
+          "title": "Respect du producteur — avec des normes professionnelles",
+          "text": "Nous comprenons la nature unique de chaque production et abordons chaque collaboration avec flexibilité et respect. Néanmoins, nous recherchons des partenaires capables de soutenir la demande de manière constante — même si elle est saisonnière ou limitée."
+        },
+        {
+          "title": "Pas de frais — juste de la confiance",
+          "text": "Geodora ne demande pas de frais de participation, d'engagements ou de paiements anticipés. La collaboration est basée uniquement sur la qualité du produit et la volonté d'une coopération sérieuse. Nous prenons le risque — parce que nous croyons en ce que vous créez."
+        }
+      ]
+    },
+    "stores": {
+      "title": "Pour les magasins",
+      "points": [
+        {
+          "title": "Des produits avec une identité, pas des codes-barres anonymes",
+          "text": "Geodora n'est pas une autre plateforme de distribution de masse. Nos produits ont des noms, des histoires et une cohérence — destinés aux magasins qui respectent leurs clients."
+        },
+        {
+          "title": "Coopération sans obligations ni pression",
+          "text": "Nous n'exigeons pas de contrats, de commandes minimales ou d'exclusivité. Notre coopération est basée sur la confiance, la cohérence et la répétabilité. Essayez quelques produits et développez le partenariat progressivement."
+        },
+        {
+          "title": "Contact personnel — réponse rapide",
+          "text": "Nous n'avons pas de centres d'appels ou de réponses automatisées. Geodora maintient un contact personnel avec chaque partenaire et répond rapidement à toute question ou changement."
+        }
+      ]
+    },
+    "contact": {
+      "prompt": "Si vous pensez que nous sommes un bon partenaire, n'hésitez pas à nous contacter.",
+      "button": "Contactez-nous"
+    }
+  },
+  "TermsPage": {
+    "meta": {
+      "title": "Conditions d'utilisation",
+      "description": "Lisez les conditions d'utilisation du site Geodora."
+    },
+    "title": "Conditions d'utilisation",
+    "intro": "L'accès et l'utilisation du site web de Geodora impliquent l'acceptation pleine et entière des conditions suivantes. Si vous n'êtes pas d'accord avec l'une d'entre elles, veuillez ne pas utiliser le site.",
+    "points": [
+      "Tout le contenu du site (textes, images, logos) est la propriété intellectuelle de Geodora, sauf indication contraire.",
+      "La copie, la reproduction ou la republication de contenu n'est pas autorisée sans autorisation écrite préalable.",
+      "Geodora n'assume aucune responsabilité pour tout dommage résultant de l'utilisation du site ou de liens externes.",
+      "Nous nous réservons le droit de modifier les conditions d'utilisation sans préavis. Les utilisateurs sont tenus de vérifier régulièrement les conditions.",
+      "Pour toute question ou préoccupation concernant les conditions, vous pouvez nous contacter via la page de contact."
+    ]
+  }
+}

@@ -1,26 +1,23 @@
 'use client';
 
+// ΒΗΜΑ 1: Import του useTranslations
+import { useTranslations } from 'next-intl';
+
 export default function LocationSection() {
+  // ΒΗΜΑ 2: Φόρτωση των μεταφράσεων
+  const t = useTranslations('LocationSection');
+
   return (
     <section className="section-box bg-white text-[#2E3A25]">
       <div className="w-[90%] max-w-screen-xl mx-auto">
+        {/* ΒΗΜΑ 3: Αντικατάσταση των κειμένων */}
         <h2 className="text-title-xl text-center mb-[clamp(3rem,6vh,6rem)]">
-          Πού θα μας βρείτε
+          {t('title')}
         </h2>
         <div className="text-body space-y-6">
-          <p>
-            Η Geodora έχει έδρα στην Πτολεμαΐδα και λειτουργεί ως ψηφιακή πλατφόρμα.
-          </p>
-          <p >
-            Δεν διαθέτουμε φυσικά καταστήματα και δεν επενδύουμε σε μόνιμες εγκαταστάσεις —
-            εκτός αν αυτό εξυπηρετεί συγκεκριμένες λειτουργικές ανάγκες, όπως η προσωρινή
-            συλλογή προϊόντων ή η υποστήριξη συνεργασιών.
-          </p>
-          <p >
-            Η επιλογή αυτού του μοντέλου δεν έγινε τυχαία: μας επιτρέπει να κινούμαστε με
-            ευελιξία, να περιορίζουμε περιττά κόστη και να εστιάζουμε σε αυτό που έχει
-            πραγματική αξία — τη συνέπεια, τη διαφάνεια και τις ουσιαστικές συνεργασίες.
-          </p>
+          <p>{t('paragraph1')}</p>
+          <p>{t('paragraph2')}</p>
+          <p>{t('paragraph3')}</p>
         </div>
         <div className="w-full h-[300px] rounded-lg overflow-hidden mt-[clamp(3rem,6vh,6rem)]">
           <iframe

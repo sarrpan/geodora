@@ -1,8 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+// ΒΗΜΑ 1: Import του useTranslations
+import { useTranslations } from 'next-intl';
 
 export default function ContactForm() {
+  // ΒΗΜΑ 2: Φόρτωση των μεταφράσεων για το ContactPage
+  const t = useTranslations('ContactPage');
+
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
@@ -25,19 +30,21 @@ export default function ContactForm() {
         setSubmitted(true);
         setFormData({ name: '', email: '', message: '' });
       } else {
-        alert(`❌ Σφάλμα: ${result.error || 'Αποτυχία αποστολής.'}`);
+        // ΒΗΜΑ 3: Χρήση μεταφράσεων στα μηνύματα σφάλματος
+        alert(`❌ ${t('errorMessage')}: ${result.error || t('errorGeneric')}`);
       }
     } catch (error) {
       console.error('Error submitting contact form:', error);
-      alert('❌ Σφάλμα κατά την αποστολή του μηνύματος.');
+      alert(t('errorMessage'));
     }
   };
 
   return (
+    // ΒΗΜΑ 4: Χρήση μεταφράσεων στα labels, buttons και μηνύματα
     <form onSubmit={handleSubmit} className="space-y-4 mt-6">
       <div>
         <label htmlFor="name" className="block mb-1 font-medium">
-          Όνομα <span className="text-red-500">*</span>
+          {t('form.name')} <span className="text-red-500">*</span>
         </label>
         <input
           type="text"
@@ -51,7 +58,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="email" className="block mb-1 font-medium">
-          Email <span className="text-red-500">*</span>
+          {t('form.email')} <span className="text-red-500">*</span>
         </label>
         <input
           type="email"
@@ -65,7 +72,7 @@ export default function ContactForm() {
 
       <div>
         <label htmlFor="message" className="block mb-1 font-medium">
-          Μήνυμα <span className="text-red-500">*</span>
+          {t('form.message')} <span className="text-red-500">*</span>
         </label>
         <textarea
           name="message"
@@ -78,12 +85,12 @@ export default function ContactForm() {
       </div>
 
       <button type="submit" className="bg-orange-600 text-white px-6 py-2 rounded hover:bg-opacity-90">
-        Αποστολή
+        {t('form.submit')}
       </button>
 
       {submitted && (
         <p className="text-green-700 text-sm mt-2">
-          ✅ Το μήνυμά σας εστάλη με επιτυχία.
+          {t('successMessage')}
         </p>
       )}
     </form>
