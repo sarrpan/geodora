@@ -6,14 +6,18 @@ import { useState } from 'react';
 export default function InterestFormSection() {
   const t = useTranslations('InterestFormSection');
 
+  // ΑΛΛΑΓΗ 1: Προσθήκη του 'phone' στο state της φόρμας
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '', // Προστέθηκε το τηλέφωνο
     role: '',
     productType: '',
     comment: '',
   });
-  const [status, setStatus] = useState('');
+
+  // ΑΛΛΑΓΗ 2: Βελτιωμένο state για τα μηνύματα επιτυχίας/σφάλματος
+  const [formStatus, setFormStatus] = useState({ status: '', message: '' });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -21,7 +25,7 @@ export default function InterestFormSection() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('sending');
+    setFormStatus({ status: 'sending', message: '' }); // Ενημέρωση κατάστασης
     try {
       const response = await fetch('/api/interest', {
         method: 'POST',
@@ -29,15 +33,18 @@ export default function InterestFormSection() {
         body: JSON.stringify(formData),
       });
 
+      const result = await response.json();
+
       if (response.ok) {
-        setStatus('success');
-        setFormData({ name: '', email: '', role: '', productType: '', comment: '' });
+        // ΑΛΛΑΓΗ 3: Χρήση του μηνύματος από το API
+        setFormStatus({ status: 'success', message: result.message });
+        setFormData({ name: '', email: '', phone: '', role: '', productType: '', comment: '' });
       } else {
-        setStatus('error');
+        setFormStatus({ status: 'error', message: result.error || t('form.errorGeneric') });
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      setStatus('error');
+      setFormStatus({ status: 'error', message: t('form.errorGeneric') });
     }
   };
 
@@ -65,7 +72,17 @@ export default function InterestFormSection() {
             className="form-control"
             required
           />
-          {/* ΔΙΟΡΘΩΣΗ: Αφαιρέθηκε το 'defaultValue' από εδώ */}
+          
+          {/* ΑΛΛΑΓΗ 4: Προσθήκη του πεδίου Τηλεφώνου */}
+          <input
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder={t('form.phonePlaceholder')}
+            className="form-control"
+          />
+
           <select
             name="role"
             value={formData.role}
@@ -93,12 +110,14 @@ export default function InterestFormSection() {
             className="form-control"
             rows={4}
           ></textarea>
-          <button type="submit" className="form-button" disabled={status === 'sending'}>
-            {status === 'sending' ? 'Αποστολή...' : t('form.submitButton')}
+          
+          <button type="submit" className="form-button" disabled={formStatus.status === 'sending'}>
+            {formStatus.status === 'sending' ? t('form.sending') : t('form.submitButton')}
           </button>
           
-          {status === 'success' && <p className="text-green-700 mt-2">Η φόρμα στάλθηκε με επιτυχία!</p>}
-          {status === 'error' && <p className="text-red-500 mt-2">Παρουσιάστηκε σφάλμα. Παρακαλώ δοκιμάστε ξανά.</p>}
+          {/* ΑΛΛΑΓΗ 5: Εμφάνιση του δυναμικού μηνύματος */}
+          {formStatus.status === 'success' && <p className="text-green-700 mt-2">{formStatus.message}</p>}
+          {formStatus.status === 'error' && <p className="text-red-500 mt-2">{formStatus.message}</p>}
         </form>
       </div>
     </section>

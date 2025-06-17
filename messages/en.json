@@ -105,6 +105,7 @@
     "form": {
       "namePlaceholder": "Name",
       "emailPlaceholder": "Email",
+      "phonePlaceholder": "Phone",
       "roleSelect": {
         "default": "Producer / Store",
         "producer": "Producer",
@@ -112,19 +113,22 @@
       },
       "productTypePlaceholder": "Product Type",
       "commentPlaceholder": "Comment or quantities (optional)",
-      "submitButton": "Submit"
+      "submitButton": "Submit",
+      "sending": "Sending..."
     }
   },
   "SuggestProductForm": {
     "labels": {
       "name": "Full Name",
       "email": "Email",
+      "phone": "Your Phone (Optional)",
       "productType": "Product Type",
       "origin": "Origin / Region",
       "packaging": "Packaging / Availability",
       "comments": "Optional comments"
     },
     "button": "Submit Proposal",
+    "buttonSending": "Sending...",
     "alerts": {
       "success": "✅ Proposal submitted successfully!",
       "error": "❌ Error submitting the proposal.",
@@ -195,6 +199,7 @@
     "form": {
       "name": "Name",
       "email": "Email",
+      "phone": "Phone (Optional)",
       "message": "Message",
       "submit": "Submit"
     },

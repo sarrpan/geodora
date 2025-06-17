@@ -105,6 +105,7 @@
     "form": {
       "namePlaceholder": "Name",
       "emailPlaceholder": "Email",
+      "phonePlaceholder": "Telefon",
       "roleSelect": {
         "default": "Produzent / Geschäft",
         "producer": "Produzent",
@@ -112,19 +113,22 @@
       },
       "productTypePlaceholder": "Produktart",
       "commentPlaceholder": "Kommentar oder Mengen (optional)",
-      "submitButton": "Absenden"
+      "submitButton": "Absenden",
+      "sending": "Wird gesendet..."
     }
   },
   "SuggestProductForm": {
     "labels": {
       "name": "Vollständiger Name",
       "email": "Email",
+      "phone": "Telefon (optional)",
       "productType": "Produktart",
       "origin": "Herkunft / Region",
       "packaging": "Verpackung / Verfügbarkeit",
       "comments": "Optionale Kommentare"
     },
     "button": "Vorschlag einreichen",
+    "buttonSending": "Wird gesendet...",
     "alerts": {
       "success": "✅ Vorschlag erfolgreich eingereicht!",
       "error": "❌ Fehler beim Einreichen des Vorschlags.",
@@ -195,6 +199,7 @@
     "form": {
       "name": "Name",
       "email": "E-Mail",
+      "phone": "Telefon (Optional)",
       "message": "Nachricht",
       "submit": "Absenden"
     },

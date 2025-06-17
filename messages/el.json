@@ -105,6 +105,7 @@
       "form": {
         "namePlaceholder": "Όνομα",
         "emailPlaceholder": "Email",
+        "phonePlaceholder": "Τηλέφωνο",
         "roleSelect": {
           "default": "Παραγωγός / Κατάστημα",
           "producer": "Παραγωγός",
@@ -112,19 +113,22 @@
         },
         "productTypePlaceholder": "Είδος προϊόντος",
         "commentPlaceholder": "Σχόλιο ή ποσότητες (προαιρετικό)",
-        "submitButton": "Υποβολή"
+        "submitButton": "Υποβολή",
+        "sending": "Αποστολή..."
       }
     },
     "SuggestProductForm": {
       "labels": {
         "name": "Ονοματεπώνυμο",
         "email": "Email",
+        "phone": "Το τηλέφωνό σας (Προαιρετικό)",
         "productType": "Τύπος προϊόντος",
         "origin": "Προέλευση / Περιοχή",
         "packaging": "Συσκευασία / Διαθεσιμότητα",
         "comments": "Προαιρετικά σχόλια"
       },
       "button": "Υποβολή πρότασης",
+      "buttonSending": "Αποστολή...",
       "alerts": {
         "success": "✅ Η πρόταση υποβλήθηκε με επιτυχία!",
         "error": "❌ Σφάλμα κατά την αποστολή της πρότασης.",
@@ -195,6 +199,7 @@
       "form": {
         "name": "Όνομα",
         "email": "Ηλεκτρονικό ταχυδρομείο",
+        "phone": "Τηλέφωνο (Προαιρετικό)",
         "message": "Μήνυμα",
         "submit": "Αποστολή"
       },

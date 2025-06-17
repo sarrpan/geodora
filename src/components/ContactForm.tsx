@@ -1,15 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-// ΒΗΜΑ 1: Import του useTranslations
 import { useTranslations } from 'next-intl';
 
 export default function ContactForm() {
-  // ΒΗΜΑ 2: Φόρτωση των μεταφράσεων για το ContactPage
   const t = useTranslations('ContactPage');
 
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
+  
+  // ΑΛΛΑΓΗ 1: Προσθέτουμε state για το μήνυμα επιτυχίας από το API
+  const [successMessage, setSuccessMessage] = useState('');
+  
+  // Το submitted δεν το χρειαζόμαστε πλέον, μπορούμε να ελέγχουμε αν υπάρχει μήνυμα
+  // const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -27,10 +30,10 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (response.ok) {
-        setSubmitted(true);
-        setFormData({ name: '', email: '', message: '' });
+        // ΑΛΛΑΓΗ 2: Αποθηκεύουμε το μήνυμα από το API στο state
+        setSuccessMessage(result.message);
+        setFormData({ name: '', email: '', phone: '', message: '' }); // Καθαρίζουμε τη φόρμα
       } else {
-        // ΒΗΜΑ 3: Χρήση μεταφράσεων στα μηνύματα σφάλματος
         alert(`❌ ${t('errorMessage')}: ${result.error || t('errorGeneric')}`);
       }
     } catch (error) {
@@ -40,7 +43,6 @@ export default function ContactForm() {
   };
 
   return (
-    // ΒΗΜΑ 4: Χρήση μεταφράσεων στα labels, buttons και μηνύματα
     <form onSubmit={handleSubmit} className="space-y-4 mt-6">
       <div>
         <label htmlFor="name" className="block mb-1 font-medium">
@@ -55,7 +57,19 @@ export default function ContactForm() {
           className="w-full border border-gray-300 p-2 rounded"
         />
       </div>
-
+      <div>
+        <label htmlFor="phone" className="block text-sm font-medium mb-1">
+          {t('form.phone')}
+        </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          value={formData.phone}
+          onChange={handleChange}
+          className="w-full border border-gray-300 p-2 rounded"
+        />
+      </div>
       <div>
         <label htmlFor="email" className="block mb-1 font-medium">
           {t('form.email')} <span className="text-red-500">*</span>
@@ -88,9 +102,10 @@ export default function ContactForm() {
         {t('form.submit')}
       </button>
 
-      {submitted && (
+      {/* ΑΛΛΑΓΗ 3: Εμφανίζουμε το μήνυμα που ήρθε από το API */}
+      {successMessage && (
         <p className="text-green-700 text-sm mt-2">
-          {t('successMessage')}
+          {successMessage}
         </p>
       )}
     </form>
