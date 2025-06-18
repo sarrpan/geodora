@@ -1,5 +1,5 @@
 // src/app/[locale]/layout.tsx
-
+import { Analytics } from '@vercel/analytics/react';
 import { NextIntlClientProvider } from 'next-intl';
 // ΔΙΟΡΘΩΣΗ 1: Αλλάζουμε το import για τις γραμματοσειρές
 import { GeistSans } from 'geist/font/sans';
@@ -35,6 +35,7 @@ export default async function RootLayout(props: Readonly<{
           </main>
           <Footer />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
