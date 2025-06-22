@@ -46,15 +46,15 @@ export default function Footer() {
   const SocialAndLanguageLinks = () => (
     <div className="flex justify-center items-center flex-wrap gap-x-8 gap-y-4 mt-6">
       <div className="flex gap-5 items-center">
-        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-75">
+        <a href="https://www.facebook.com/profile.php?id=61577839610921" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-75">
           <Image src="/images/facebook.svg" alt={t('alt.facebook')} width={28} height={28} />
         </a>
-        <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-75">
-          <Image src="/images/twitter.svg" alt={t('alt.twitter')} width={28} height={28} />
+        <a href="https://www.instagram.com/geodora.gr/" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-75">
+          <Image src="/images/instagram.svg" alt={t('alt.instagram')} width={28} height={28} />
         </a>
-        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-75">
+        {/*<a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="transition-opacity hover:opacity-75">
           <Image src="/images/youtube.svg" alt={t('alt.youtube')} width={28} height={28} />
-        </a>
+        </a>*/}
       </div>
       <LanguageSwitcher variant="inline" />
     </div>

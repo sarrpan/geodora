@@ -91,7 +91,7 @@ export default function ProductsSection() {
               className={`${animate ? 'wheel-animate' : ''} relative w-[250px] md:w-[350px] lg:w-[500px]`}
             >
               <Image
-                src="/images/roda.svg"
+                src="/images/Wheel.svg"
                 alt={t('productWheel.logoAlt')} // Χρησιμοποιεί το υπάρχον alt text
                 width={500}
                 height={500}
